@@ -1,4 +1,3 @@
-// src/components/ui/button.tsx
 import * as React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,6 +13,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'default',
       size = 'default',
       asChild = false,
+      children,
       ...props
     },
     ref
@@ -36,17 +36,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
-    if (asChild && React.isValidElement(props.children)) {
-      return React.cloneElement(props.children as React.ReactElement<unknown>, {
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children, {
         className: classes,
         ...props,
-      });
+      } as any);
     }
 
-    return <button className={classes} ref={ref} {...props} />;
+    return (
+      <button className={classes} ref={ref} {...props}>
+        {children}
+      </button>
+    );
   }
 );
 
 Button.displayName = 'Button';
 
 export { Button };
+export default Button;

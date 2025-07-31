@@ -1,5 +1,5 @@
 
-import { getPostData, getAllPostIds } from '@/lib/posts';
+import { getPostData } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {

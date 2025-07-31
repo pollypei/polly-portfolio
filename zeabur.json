@@ -1,0 +1,15 @@
+{
+  "name": "polly-portfolio",
+  "build": {
+    "commands": [
+      "npm ci",
+      "npm run build"
+    ]
+  },
+  "deploy": {
+    "static": false
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
