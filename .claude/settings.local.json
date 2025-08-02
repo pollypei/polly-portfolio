@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
@@ -9,7 +10,15 @@
       "Bash(taskkill:*)",
       "Bash(curl:*)",
       "Bash(del next.config.ts)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npm run lint)",
+      "Bash(mkdir:*)",
+      "Bash(move \"src\\content\\posts\\DALL·E 2025-05-18 13.19.30 - A warm, calming Japanese-style illustration for a blog cover with a gentle, healing atmosphere. The scene features a cozy, sunlit room with soft woode.webp\" \"public\\images\"\")",
+      "Bash(move \"src/content/posts/DALL·E 2025-05-18 13.19.30 - A warm, calming Japanese-style illustration for a blog cover with a gentle, healing atmosphere. The scene features a cozy, sunlit room with soft woode.webp\" \"public/images/\")",
+      "Bash(mv:*)",
+      "Bash(node:*)",
+      "Bash(timeout 3 npm run dev)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
